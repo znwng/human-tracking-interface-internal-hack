@@ -138,6 +138,7 @@ function App() {
     if (file && videoRef.current) {
       const url = URL.createObjectURL(file)
       videoRef.current.src = url
+      setVideoLoaded(true)
     }
   }
 
@@ -193,6 +194,7 @@ function App() {
               muted
               loop
               autoPlay
+              style={{ display: videoLoaded ? 'block' : 'none' }}
             />
             <canvas
               ref={canvasRef}
